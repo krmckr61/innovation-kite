@@ -14,8 +14,8 @@ class TextToDigitTest extends TestCase
      */
     public function test_text_to_digits()
     {
-        $textToDigit = new TextToDigit('one hundred and fifty six million three hundred and twenty five thousand eight hundred and seventy nine');
-        $this->assertEquals(156325879, $textToDigit->convert());
+        $textToDigit = new TextToDigit('ninety thousand thirty seven');
+        $this->assertEquals(90037, $textToDigit->convert());
     }
 
     /**
@@ -27,5 +27,16 @@ class TextToDigitTest extends TestCase
     {
         $textToDigit = new TextToDigit('One hundred twenty four thousand three hundred and fifty');
         $this->assertEquals(124350, $textToDigit->convert());
+    }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
+    public function test_text_to_digits3()
+    {
+        $textToDigit = new TextToDigit('nine hundred fifty six billion three hundred and twenty five million eight hundred and seventy nine thousand six hundred and fifty eight');
+        $this->assertEquals(956325879658, $textToDigit->convert());
     }
 }
